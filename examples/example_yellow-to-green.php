@@ -41,7 +41,7 @@ $width            = 600;
 $height           = 300;
 $size             = 20;
 $font             = rtrim(dirname(__FILE__), '/\\') . '/arial.ttf';
-$string           = 'This example fades from Yellow to Green';
+$string           = 'This example fades from yellow to green';
 
 // calculate the text size in advance
 $text_dimensions  = imagettfbbox($size, 0, $font, $string);
