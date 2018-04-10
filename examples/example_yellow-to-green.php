@@ -37,11 +37,11 @@ if (file_exists('../source/imagettftextgradient.php')) {
 }
 
 // set the parameters for our image
-$width = 600;
-$height = 300;
-$size = 20;
-$font = rtrim(dirname(__FILE__), '/\\') . '/arial.ttf';
-$string = 'This example fades from Yellow to Green';
+$width            = 600;
+$height           = 300;
+$size             = 20;
+$font             = rtrim(dirname(__FILE__), '/\\') . '/arial.ttf';
+$string           = 'This example fades from Yellow to Green';
 
 // calculate the text size in advance
 $text_dimensions  = imagettfbbox($size, 0, $font, $string);
