@@ -1,14 +1,14 @@
 {
     "name": "andrewgjohnson/imagettftextgradient",
     "type": "library",
-    "description": "imagettftextgradient is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images.",
+    "description": "imagettftextgradient is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images",
     "keywords": [
         "gd",
         "graphics",
         "image",
         "images"
     ],
-    "homepage": "https://github.com/andrewgjohnson/imagettftextgradient",
+    "homepage": "http://imagettftextgradient.org",
     "license": "MIT",
     "authors": [
         {

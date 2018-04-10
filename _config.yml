@@ -1,0 +1,24 @@
+title:        imagettftextgradient
+name:         imagettftextgradient
+description:  imagettftextgradient is a drop in replacement for imagettftext with added parameters to add gradient, glow and shadow effects to your PHP GD images.
+author:       Andrew G. Johnson
+author_email: andrew@andrewgjohnson.com
+email:        andrew@andrewgjohnson.com
+url:          "http://imagettftextgradient.org"
+includes_dir: .
+layouts_dir:  documentation/imagettftextgradient.org/layouts
+exclude:      [
+               CHANGELOG.md,
+               CNAME,
+               CODE_OF_CONDUCT.md,
+               composer.json,
+               CONTRIBUTING.md,
+               documentation/README.md,
+               examples/*.php,
+               examples/*.ttf,
+               ISSUE_TEMPLATE.md,
+               LICENSE,
+               PULL_REQUEST_TEMPLATE.md,
+               README.md,
+               source
+              ]

@@ -3,7 +3,7 @@
 /**
  * Imagettftextgradient Example (Red to Blue)
  *
- * Copyright (c) 2017 Andrew G. Johnson <andrew@andrewgjohnson.com>
+ * Copyright (c) 2017-2018 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in the
  * Software without restriction, including without limitation the rights to use,
@@ -24,41 +24,52 @@
  * @category  Andrewgjohnson
  * @package   Imagettftextgradient
  * @author    Andrew G. Johnson <andrew@andrewgjohnson.com>
- * @copyright 2017 Andrew G. Johnson <andrew@andrewgjohnson.com>
- * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link      http://github.com/andrewgjohnson/imagettftextgradient
+ * @copyright 2017-2018 Andrew G. Johnson <andrew@andrewgjohnson.com>
+ * @license   https://opensource.org/licenses/mit/ The MIT License
+ * @link      https://github.com/andrewgjohnson/imagettftextgradient
  */
 
+// include the imagettftextgradient source if you're not using Composer
 if (file_exists('../source/imagettftextgradient.php')) {
     include_once '../source/imagettftextgradient.php';
 } else {
     die('imagettftextgradient.php not found');
 }
 
+// set the parameters for our image
 $width = 600;
 $height = 300;
 $size = 20;
 $font = rtrim(dirname(__FILE__), '/\\') . '/arial.ttf';
 $string = 'This example fades from red to blue';
 
-$text_dimensions = imagettfbbox($size, 0, $font, $string);
-$text_left = min($text_dimensions[2], $text_dimensions[4]);
-$text_right = max($text_dimensions[0], $text_dimensions[6]);
-$text_top = min($text_dimensions[5], $text_dimensions[7]);
-$text_bottom = max($text_dimensions[1], $text_dimensions[3]);
+// calculate the text size in advance
+$text_dimensions  = imagettfbbox($size, 0, $font, $string);
 
-$x_offset = ($width / 2) - (($text_left - $text_right) / 2);
-$y_offset = ($height / 2) - (($text_top - $text_bottom) / 2);
+// calculate the text's edges
+$text_left        = min($text_dimensions[2], $text_dimensions[4]);
+$text_right       = max($text_dimensions[0], $text_dimensions[6]);
+$text_top         = min($text_dimensions[5], $text_dimensions[7]);
+$text_bottom      = max($text_dimensions[1], $text_dimensions[3]);
 
-$image = imagecreatetruecolor($width, $height);
+// calculate the text's position
+$x_offset         = ($width / 2) - (($text_left - $text_right) / 2);
+$y_offset         = ($height / 2) - (($text_top - $text_bottom) / 2);
 
-$background_color = imagecolorallocate($image, 0xEE, 0xEE, 0xEE);
-$red = imagecolorallocate($image, 0xFF, 0x00, 0x00);
-$blue = imagecolorallocate($image, 0x00, 0x00, 0xFF);
+// create our image
+$im               = imagecreatetruecolor($width, $height);
 
-imagefill($image, 0, 0, $background_color);
+// set our image's colors
+$background_color = imagecolorallocate($im, 0xEE, 0xEE, 0xEE);
+$red              = imagecolorallocate($im, 0xFF, 0x00, 0x00);
+$blue             = imagecolorallocate($im, 0x00, 0x00, 0xFF);
+
+// fill our image with the background color
+imagefill($im, 0, 0, $background_color);
+
+// place the text onto our image
 imagettftextgradient(
-    $image,
+    $im,
     $size,
     0,
     $x_offset,
@@ -69,7 +80,7 @@ imagettftextgradient(
     $blue
 );
 
+// display our image and destroy the GD resource
 header('Content-Type:image/png');
-imagepng($image);
-
-imagedestroy($image);
+imagepng($im);
+imagedestroy($im);

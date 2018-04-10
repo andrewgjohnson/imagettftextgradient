@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Imagettftextgradient v1.0.0
+ * Imagettftextgradient v1.0.1
  *
- * Copyright (c) 2017 Andrew G. Johnson <andrew@andrewgjohnson.com>
+ * Copyright (c) 2017-2018 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in the
  * Software without restriction, including without limitation the rights to use,
@@ -24,9 +24,9 @@
  * @category  Andrewgjohnson
  * @package   Imagettftextgradient
  * @author    Andrew G. Johnson <andrew@andrewgjohnson.com>
- * @copyright 2017 Andrew G. Johnson <andrew@andrewgjohnson.com>
- * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link      http://github.com/andrewgjohnson/imagettftextgradient
+ * @copyright 2017-2018 Andrew G. Johnson <andrew@andrewgjohnson.com>
+ * @license   https://opensource.org/licenses/mit/ The MIT License
+ * @link      https://github.com/andrewgjohnson/imagettftextgradient
  */
 
 if (!function_exists('imagettftextgradient')) {
@@ -93,10 +93,10 @@ if (!function_exists('imagettftextgradient')) {
             // $return_array will be returned once all calculations are complete
             $return_array = [
                 imagesx($image), // lower left, x coordinate
-                0,               // lower left, y coordinate
-                0,               // lower right, x coordinate
-                0,               // lower right, y coordinate
-                0,               // upper right, x coordinate
+                -1,              // lower left, y coordinate
+                -1,              // lower right, x coordinate
+                -1,              // lower right, y coordinate
+                -1,              // upper right, x coordinate
                 imagesy($image), // upper right, y coordinate
                 imagesx($image), // upper left, x coordinate
                 imagesy($image)  // upper left, y coordinate
