@@ -9,7 +9,7 @@
 
 ## Description
 
-imagettftextgradient is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images.
+**imagettftextgradient** is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images.
 
 ## Usage
 
@@ -38,7 +38,7 @@ To use without Composer add an [include](http://php.net/manual/function.include.
     // standard method to add text to a GD image
     imagettftext($im, 20, 0, 0, 0, $color, $font, $string);
 
-    // this will work the same as the line above
+    // this will work the exact same as the line above
     imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string);
 
     // method to add text with gradient coloring effects to a GD image
