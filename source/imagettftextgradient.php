@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagettftextgradient v1.0.2
+ * Imagettftextgradient v1.0.3
  *
  * Copyright (c) 2017-2018 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
