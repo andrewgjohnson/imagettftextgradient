@@ -76,11 +76,11 @@ if (!function_exists('imagettftextgradient')) {
      *    color index has the effect of turning off antialiasing. See
      *    imagecolorallocate().</p>
      *
-     * @return Returns an array with 8 elements representing four points making the
-     * bounding box of the text. The order of the points is lower left, lower right,
-     * upper right, upper left. The points are relative to the text regardless of
-     * the angle, so "upper left" means in the top left-hand corner when you see the
-     * text horizontally. Returns FALSE on error.
+     * @return mixed Returns an array with 8 elements representing four points
+     * making the bounding box of the text. The order of the points is lower left,
+     * lower right, upper right, upper left. The points are relative to the text
+     * regardless of the angle, so "upper left" means in the top left-hand corner
+     * when you see the text horizontally. Returns FALSE on error.
      */
     function imagettftextgradient(
         &$image,
