@@ -7,6 +7,8 @@
 [![Packagist Downloads](https://img.shields.io/packagist/dt/andrewgjohnson/imagettftextgradient.png)](https://packagist.org/packages/andrewgjohnson/imagettftextgradient/stats)
 [![Issues](https://img.shields.io/github/issues/andrewgjohnson/imagettftextgradient.png)](https://github.com/andrewgjohnson/imagettftextgradient/issues)
 
+<p align="center"><a href="https://imagettftextgradient.org/" title=""><img src="https://imagettftextgradient.org/documentation/imagettftextgradient.org/images/avatar.png" alt="" title="" width="400" id="avatar" /></a></p>
+
 ## Description
 
 **imagettftextgradient** is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images.
