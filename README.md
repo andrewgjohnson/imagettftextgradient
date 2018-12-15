@@ -46,7 +46,7 @@ To use without Composer add an [include](http://php.net/manual/function.include.
     // method to add text with gradient coloring effects to a GD image
     imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, $gradient_color);
 
-There are [other examples](https://github.com/andrewgjohnson/imagettftextgradient/tree/master/examples) included in the GitHub repository and on [imagettftextgradient.org](http://imagettftextgradient.org/examples/).
+There are [other examples](https://github.com/andrewgjohnson/imagettftextgradient/tree/master/examples) included in the GitHub repository and on [imagettftextgradient.org](https://imagettftextgradient.org/examples/).
 
 ## Help Requests
 
