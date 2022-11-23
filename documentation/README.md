@@ -1,3 +1,3 @@
 # Documentation
 
-The documentation can be viewed on [imagettftextgradient.org](https://imagettftextgradient.org/).
+The documentation can be viewed on [imagettftextgradient.agjgd.org](https://imagettftextgradient.agjgd.org/).
