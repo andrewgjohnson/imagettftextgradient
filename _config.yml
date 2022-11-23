@@ -4,21 +4,23 @@ description:  imagettftextgradient is a drop in replacement for imagettftext wit
 author:       Andrew G. Johnson
 author_email: andrew@andrewgjohnson.com
 email:        andrew@andrewgjohnson.com
-url:          "http://imagettftextgradient.org"
+url:          "https://imagettftextgradient.agjgd.org"
 includes_dir: .
-layouts_dir:  documentation/imagettftextgradient.org/layouts
+layouts_dir:  documentation/imagettftextgradient.agjgd.org/layouts
 exclude:      [
+               .github,
+               .github/*.md,
+               .github/*.yml,
+               .github/CODEOWNERS,
+               .github/ISSUE_TEMPLATE,
+               .github/ISSUE_TEMPLATE/*.yml,
                CHANGELOG.md,
                CNAME,
-               CODE_OF_CONDUCT.md,
                composer.json,
-               CONTRIBUTING.md,
                documentation/README.md,
                examples/*.php,
                examples/*.ttf,
-               ISSUE_TEMPLATE.md,
                LICENSE,
-               PULL_REQUEST_TEMPLATE.md,
                README.md,
                source
               ]
