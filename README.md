@@ -2,11 +2,10 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-0366d6.png?colorB=0366d6&style=flat-square)](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/LICENSE)
 [![Current Release](https://img.shields.io/github/release/andrewgjohnson/imagettftextgradient.png?colorB=0366d6&style=flat-square&logoColor=white&logo=github)](https://github.com/andrewgjohnson/imagettftextgradient/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/andrewgjohnson/imagettftextgradient.png?colorB=0366d6&style=flat-square&logoColor=white&logo=github)](https://github.com/andrewgjohnson/imagettftextgradient/stargazers)
 [![Contributors](https://img.shields.io/github/contributors/andrewgjohnson/imagettftextgradient.png?colorB=0366d6&style=flat-square&logoColor=white&logo=github)](https://github.com/andrewgjohnson/imagettftextgradient/graphs/contributors)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/andrewgjohnson/imagettftextgradient.png?colorB=0366d6&style=flat-square&logoColor=white&logo=packagist)](https://packagist.org/packages/andrewgjohnson/imagettftextgradient/stats)
 [![Issues](https://img.shields.io/github/issues/andrewgjohnson/imagettftextgradient.png?colorB=0366d6&style=flat-square&logoColor=white&logo=github)](https://github.com/andrewgjohnson/imagettftextgradient/issues)
-[![Patreon](https://img.shields.io/endpoint.png?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dagjopensource%26type%3Dpatrons&colorB=0366d6&style=flat-square&logoColor=white&logo=patreon)](https://patreon.com/agjopensource)
+[![Patreon](https://imagettftextgradient.agjgd.org/documentation/imagettftextgradient.agjgd.org/images/patreon-badge.png)](https://patreon.com/agjopensource)
 
 <p align="center"><a href="https://imagettftextgradient.agjgd.org/" title=""><img src="https://imagettftextgradient.agjgd.org/documentation/imagettftextgradient.agjgd.org/images/avatar.png" alt="" title="" width="400" id="avatar" /></a></p>
 
@@ -16,7 +15,7 @@
 
 [![Patreon - Become a Patron](https://raster.shields.io/badge/Patreon%20-become%20a%20Patron-FD334A.png?style=for-the-badge&logo=patreon&logoColor=FD334A)](https://patreon.com/agjopensource)
 
-**imagettftextgradient** is an [agjgd.org](https://agjgd.org) project.
+**imagettftextgradient** is an [agjgd](https://agjgd.org) project.
 
 ## Usage
 
