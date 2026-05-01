@@ -11,7 +11,7 @@
 
 ## Description
 
-**imagettftextgradient** is a drop in replacement for imagettftext with an added parameter to add gradient coloring effects to your PHP GD images.
+**imagettftextgradient** is a drop-in replacement for imagettftext with added parameters to add gradient coloring effects to your PHP GD images.
 
 [![Patreon - Become a Patron](https://raster.shields.io/badge/Patreon%20-become%20a%20Patron-FD334A.png?style=for-the-badge&logo=patreon&logoColor=FD334A)](https://patreon.com/agjopensource)
 
@@ -41,14 +41,17 @@ To use without Composer add an [include](http://php.net/manual/function.include.
 
 ## Examples
 
-    // standard method to add text to a GD image
-    imagettftext($im, 20, 0, 0, 0, $color, $font, $string);
+    // In PHP 8.0 a ninth parameter ($options) was added to imagettftext()
+    imagettftext($im, 20, 0, 0, 0, $color, $font, $string, array()); // Add text to a GD image
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, array()); // This works the same as the line above
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, array(), $secondColor); // This will add the same text only with a vertical gradient instead of a solid color
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, array(), $secondColor, true); // This will add the same text only with a horizontal gradient instead of a solid color
 
-    // this will work the exact same as the line above
-    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string);
-
-    // method to add text with gradient coloring effects to a GD image
-    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, $gradient_color);
+    // We also support previous versions of PHP back to 5.0 and the previous version of imagettftext()
+    imagettftext($im, 20, 0, 0, 0, $color, $font, $string); // Add text to a GD image
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string); // This works the same as the line above
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, $secondColor); // This will add the same text only with a vertical gradient instead of a solid color
+    imagettftextgradient($im, 20, 0, 0, 0, $color, $font, $string, $secondColor, true); // This will add the same text only with a horizontal gradient instead of a solid color
 
 There are [other examples](https://github.com/andrewgjohnson/imagettftextgradient/tree/master/examples) included in the GitHub repository and on [imagettftextgradient.agjgd.org](https://imagettftextgradient.agjgd.org/examples/).
 
@@ -60,7 +63,7 @@ If you discover a bug please [enter an issue](https://github.com/andrewgjohnson/
 
 ## Contributing
 
-Please read our [contributing guidelines](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/CONTRIBUTING.md) if you want to contribute.
+Please read our [contributing guidelines](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/.github/CONTRIBUTING.md) if you want to contribute.
 
 You can contribute financially by becoming a [patron](https://patreon.com/agjopensource) at [patreon.com/agjopensource](https://patreon.com/agjopensource) to support imagettftextgradient and [other agjgd.org projects](https://agjgd.org/projects/).
 

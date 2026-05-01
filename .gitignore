@@ -6,6 +6,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+.settings/
+.settings/*
 .svn/
 .svn/*
 .buildpath
@@ -14,3 +16,4 @@ _site
 .settings/*
 composer.lock
 vendor
+.phpunit.result.cache
