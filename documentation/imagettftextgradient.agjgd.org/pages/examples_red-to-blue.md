@@ -6,12 +6,12 @@ permalink: /examples/red-to-blue/
 
 # Example: Red to Blue
 
-[**example_red-to-blue.php**](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/examples/example_red-to-blue.php)
+[**01-red-to-blue.php**](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/examples/01-red-to-blue.php)
 
-<pre><code>{% include examples/example_red-to-blue.php %}</code></pre>
+<pre><code>{% include examples/01-red-to-blue.php %}</code></pre>
 
 ## Expected Output
 
-[**example_red-to-blue.png**](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/examples/example_red-to-blue.png)
+[**01-red-to-blue.png**](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/examples/01-red-to-blue.png)
 
-![Example: Red to Blue](/examples/example_red-to-blue.png "Example: Red to Blue")
+![Example: Red to Blue](/examples/01-red-to-blue.png "Example: Red to Blue")

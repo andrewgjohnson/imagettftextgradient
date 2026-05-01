@@ -4,8 +4,17 @@ All notable changes to the [imagettftextgradient project](https://github.com/and
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v1.1.0 (April 30, 2026)
+ * Added [Contribute](https://imagettftextgradient.agjgd.org/contribute/) page and updated [contributing guidelines](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/.github/CONTRIBUTING.md)
+ * Added PHP_CodeSniffer support to enforce PSR-12 and PHP 5.0 compatibility
+ * Added PHPUnit support for unit tests
+ * Added `lint`, `lint:fix`, `phpunit` and `test` composer scripts
+ * Added ability to choose between a horizontal and vertical gradient with the new parameter `$horizontalGradient`
+ * Fixed support for older PHP versions; this project now truly supports PHP 5.0
+ * Fixed a number of broken links
+
 ## v1.0.4 (November 22, 2022)
- * Signed up for [Patreon](https://patreon.com/agjgd) and added links to README.md
+ * Signed up for [Patreon](https://patreon.com/agjopensource) and added links to README.md
  * Added `.github` folder to unclutter the root directory
  * Added `CODEOWNERS` file
  * Added `FUNDING.yml` file

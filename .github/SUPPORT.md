@@ -12,4 +12,4 @@ You can find our discussions area on [GitHub](https://github.com/andrewgjohnson/
 
 ## Financial Support
 
-You can financially support imagettftextgradient on [Patreon](https://patreon.com/agjgd).
+You can financially support imagettftextgradient on [Patreon](https://patreon.com/agjopensource).
