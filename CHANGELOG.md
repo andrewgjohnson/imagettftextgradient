@@ -4,6 +4,10 @@ All notable changes to the [imagettftextgradient project](https://github.com/and
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v1.1.1 (May 3, 2026)
+ * Added [ci.yml worfklow](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/.github/workflows/ci.yml) to add PHP_CodeSniffer and PHPUnit checks into the pull request process on GitHub
+ * Fixed math errors in the examples and regenerated the example PNG's
+
 ## v1.1.0 (April 30, 2026)
  * Added [Contribute](https://imagettftextgradient.agjgd.org/contribute/) page and updated [contributing guidelines](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/.github/CONTRIBUTING.md)
  * Added PHP_CodeSniffer support to enforce PSR-12 and PHP 5.0 compatibility

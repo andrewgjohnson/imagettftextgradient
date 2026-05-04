@@ -43,20 +43,20 @@ $string          = 'This example fades from yellow to green';
 $textDimensions  = imagettfbbox($size, 0, $font, $string);
 
 // Calculate the text’s edges
-$textLeft        = min($textDimensions[0], $textDimensions[6]);
-$textRight       = max($textDimensions[2], $textDimensions[4]);
-$textTop         = min($textDimensions[1], $textDimensions[3]);
-$textBottom      = max($textDimensions[5], $textDimensions[7]);
+$textLeft        = min($textDimensions[0], $textDimensions[2], $textDimensions[4], $textDimensions[6]);
+$textRight       = max($textDimensions[0], $textDimensions[2], $textDimensions[4], $textDimensions[6]);
+$textTop         = min($textDimensions[1], $textDimensions[3], $textDimensions[5], $textDimensions[7]);
+$textBottom      = max($textDimensions[1], $textDimensions[3], $textDimensions[5], $textDimensions[7]);
 
 // Calculate the text’s position
-$xOffset         = ($width / 2)  - (($textRight - $textLeft) / 2);
-$yOffset         = ($height / 2) - (($textBottom - $textTop) / 2);
+$xOffset         = (int)round(($width / 2) - (($textRight - $textLeft) / 2) - $textLeft);
+$yOffset         = (int)round(($height / 2) - (($textBottom - $textTop) / 2) - $textTop);
 
 // Create our image
 $im              = imagecreatetruecolor($width, $height);
 
 // Set our image’s colors
-$backgroundColor = imagecolorallocate($im, 0xEE, 0xEE, 0xEE);
+$backgroundColor = imagecolorallocate($im, 0x11, 0x11, 0x11);
 $yellow          = imagecolorallocate($im, 0xFF, 0xFF, 0x00);
 $green           = imagecolorallocate($im, 0x00, 0xFF, 0x00);
 
@@ -73,8 +73,7 @@ imagettftextgradient(
     $yellow,
     $font,
     $string,
-    $green,
-    true
+    $green
 );
 
 // Display our image and destroy the GD resource
