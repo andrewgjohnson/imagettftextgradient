@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagettftextgradient v1.1.1
+ * Imagettftextgradient v1.1.2
  *
  * Copyright (c) 2017-2026 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -206,103 +206,100 @@ if (!function_exists('imagettftextgradient')) {
                 $text
             );
 
-            if ($imagettftext === false) { // If imagettftext() failed, there’s no need to continue
-                imagedestroy($temporaryImage);
-                return false;
-            }
+            if ($imagettftext !== false) {
+                // Calculate the text’s edges
+                $textLeft   = min($imagettftext[0], $imagettftext[6]);
+                $textRight  = max($imagettftext[2], $imagettftext[4]);
+                $textTop    = min($imagettftext[5], $imagettftext[7]);
+                $textBottom = max($imagettftext[1], $imagettftext[3]);
+                $textHeight = $textBottom - $textTop;
+                $textWidth  = $textRight - $textLeft;
 
-            // Calculate the text’s edges
-            $textLeft   = min($imagettftext[0], $imagettftext[6]);
-            $textRight  = max($imagettftext[2], $imagettftext[4]);
-            $textTop    = min($imagettftext[5], $imagettftext[7]);
-            $textBottom = max($imagettftext[1], $imagettftext[3]);
-            $textHeight = $textBottom - $textTop;
-            $textWidth  = $textRight - $textLeft;
-
-            // Loop through each pixel in $temporaryImage
-            for ($temporaryX = 0; $temporaryX < imagesx($temporaryImage); $temporaryX++) {
-                for ($temporaryY = 0; $temporaryY < imagesy($temporaryImage); $temporaryY++) {
-                    // $visibility is the grayscale of the current pixel
-                    $visibility = (imagecolorat(
-                        $temporaryImage,
-                        $temporaryX,
-                        $temporaryY
-                    ) & 0xFF) / 255;
-
-                    // If the current pixel would be visible, add it to $image
-                    if ($visibility > 0) {
-                        // We are on an affected pixel so update $returnArray accordingly
-                        $returnArray = array(
-                            min($returnArray[0], $temporaryX),
-                            max($returnArray[1], $temporaryY),
-                            max($returnArray[2], $temporaryX),
-                            max($returnArray[3], $temporaryY),
-                            max($returnArray[4], $temporaryX),
-                            min($returnArray[5], $temporaryY),
-                            min($returnArray[6], $temporaryX),
-                            min($returnArray[7], $temporaryY)
-                        );
-
-                        // Determine the current pixel’s RGB color code and alpha value by first calculating its
-                        // position within the text
-                        if ($horizontalGradient) {
-                            $gradientPosition = ($temporaryX - $textLeft) / $textWidth;
-                        } else {
-                            $gradientPosition = ($temporaryY - $textTop) / $textHeight;
-                        }
-
-                        $colorRed  = ($color >> 16) & 0xFF;
-                        $colorRed *= 1 - $gradientPosition;
-                        $gradientColorRed  = ($gradientColor >> 16) & 0xFF;
-                        $gradientColorRed *= $gradientPosition;
-                        $red = round($colorRed + $gradientColorRed);
-
-                        $colorGreen  = ($color >> 8) & 0xFF;
-                        $colorGreen *= 1 - $gradientPosition;
-                        $gradientColorGreen  = ($gradientColor >> 8) & 0xFF;
-                        $gradientColorGreen *= $gradientPosition;
-                        $green = round($colorGreen + $gradientColorGreen);
-
-                        $colorBlue  = $color & 0xFF;
-                        $colorBlue *= 1 - $gradientPosition;
-                        $gradientColorBlue  = $gradientColor & 0xFF;
-                        $gradientColorBlue *= $gradientPosition;
-                        $blue = round($colorBlue + $gradientColorBlue);
-
-                        $colorData = imagecolorsforindex(
-                            $image,
-                            $color
-                        );
-                        $colorOpacity = $colorData['alpha'] * (1 - $gradientPosition);
-
-                        $gradientColorData = imagecolorsforindex(
-                            $image,
-                            $gradientColor
-                        );
-                        $gradientColorOpacity = $gradientColorData['alpha'] * $gradientPosition;
-
-                        $opacity = $colorOpacity + $gradientColorOpacity;
-                        $opacity = (127 - $opacity) / 127;
-
-                        // Set the current pixel in $image
-                        imagesetpixel(
-                            $image,
+                // Loop through each pixel in $temporaryImage
+                for ($temporaryX = 0; $temporaryX < imagesx($temporaryImage); $temporaryX++) {
+                    for ($temporaryY = 0; $temporaryY < imagesy($temporaryImage); $temporaryY++) {
+                        // $visibility is the grayscale of the current pixel
+                        $visibility = (imagecolorat(
+                            $temporaryImage,
                             $temporaryX,
-                            $temporaryY,
-                            imagecolorallocatealpha(
+                            $temporaryY
+                        ) & 0xFF) / 255;
+
+                        // If the current pixel would be visible, add it to $image
+                        if ($visibility > 0) {
+                            // We are on an affected pixel so update $returnArray accordingly
+                            $returnArray = array(
+                                min($returnArray[0], $temporaryX),
+                                max($returnArray[1], $temporaryY),
+                                max($returnArray[2], $temporaryX),
+                                max($returnArray[3], $temporaryY),
+                                max($returnArray[4], $temporaryX),
+                                min($returnArray[5], $temporaryY),
+                                min($returnArray[6], $temporaryX),
+                                min($returnArray[7], $temporaryY)
+                            );
+
+                            // Determine the current pixel’s RGB color code and alpha value by first calculating its
+                            // position within the text
+                            if ($horizontalGradient) {
+                                $gradientPosition = ($temporaryX - $textLeft) / $textWidth;
+                            } else {
+                                $gradientPosition = ($temporaryY - $textTop) / $textHeight;
+                            }
+
+                            $colorRed  = ($color >> 16) & 0xFF;
+                            $colorRed *= 1 - $gradientPosition;
+                            $gradientColorRed  = ($gradientColor >> 16) & 0xFF;
+                            $gradientColorRed *= $gradientPosition;
+                            $red = round($colorRed + $gradientColorRed);
+
+                            $colorGreen  = ($color >> 8) & 0xFF;
+                            $colorGreen *= 1 - $gradientPosition;
+                            $gradientColorGreen  = ($gradientColor >> 8) & 0xFF;
+                            $gradientColorGreen *= $gradientPosition;
+                            $green = round($colorGreen + $gradientColorGreen);
+
+                            $colorBlue  = $color & 0xFF;
+                            $colorBlue *= 1 - $gradientPosition;
+                            $gradientColorBlue  = $gradientColor & 0xFF;
+                            $gradientColorBlue *= $gradientPosition;
+                            $blue = round($colorBlue + $gradientColorBlue);
+
+                            $colorData = imagecolorsforindex(
                                 $image,
-                                $red,
-                                $green,
-                                $blue,
-                                (int)round((1 - $visibility) * 127 * $opacity)
-                            )
-                        );
+                                $color
+                            );
+                            $colorOpacity = $colorData['alpha'] * (1 - $gradientPosition);
+
+                            $gradientColorData = imagecolorsforindex(
+                                $image,
+                                $gradientColor
+                            );
+                            $gradientColorOpacity = $gradientColorData['alpha'] * $gradientPosition;
+
+                            $opacity = $colorOpacity + $gradientColorOpacity;
+                            $opacity = (127 - $opacity) / 127;
+
+                            // Set the current pixel in $image
+                            imagesetpixel(
+                                $image,
+                                $temporaryX,
+                                $temporaryY,
+                                imagecolorallocatealpha(
+                                    $image,
+                                    $red,
+                                    $green,
+                                    $blue,
+                                    (int)round((1 - $visibility) * 127 * $opacity)
+                                )
+                            );
+                        }
                     }
                 }
             }
 
             // Destroy our $temporaryImage
-            imagedestroy($temporaryImage);
+            version_compare(PHP_VERSION, '8.0.0', '<') && imagedestroy($temporaryImage);
 
             if ($returnArray === $returnArrayDefault) {
                 // Return false if $returnArray hasn’t changed to indicate a failure
