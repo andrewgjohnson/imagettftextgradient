@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagettftextgradient Example (Yellow to Green)
+ * Imagettftextgradient Example (Horizontal Gradient)
  *
  * Copyright (c) 2017-2026 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
