@@ -20,7 +20,7 @@
  * @category  Andrewgjohnson
  * @package   Imagettftextgradient
  * @author    Andrew G. Johnson <andrew@andrewgjohnson.com>
- * @copyright 2017-2022 Andrew G. Johnson <andrew@andrewgjohnson.com>
+ * @copyright 2017-2026 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * @license   https://opensource.org/licenses/mit/ The MIT License
  * @link      https://github.com/andrewgjohnson/imagettftextgradient
  */
@@ -36,7 +36,7 @@ if (file_exists('../source/imagettftextgradient.php')) {
 $width           = 600;
 $height          = 300;
 $size            = 20;
-$font            = dirname(__FILE__) . '/arial.ttf';
+$font            = dirname(__FILE__) . '/NotoSans-Regular.ttf';
 $string          = 'This example fades from red to blue in PHP 8+';
 
 // Calculate the text size in advance
