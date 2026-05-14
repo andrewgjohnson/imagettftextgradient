@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Imagettftextgradient v1.1.2
+ * Imagettftextgradient v1.1.3
  *
  * Copyright (c) 2017-2026 Andrew G. Johnson <andrew@andrewgjohnson.com>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -124,7 +124,7 @@ if (!function_exists('imagettftextgradient')) {
      * horizontally. Returns FALSE on error.
      */
     function imagettftextgradient(
-        &$image,
+        $image,
         $size,
         $angle,
         $x,
@@ -148,7 +148,7 @@ if (!function_exists('imagettftextgradient')) {
             $horizontalGradient = $gradientColorOrHorizontalGradient;
         }
 
-        // If either grdient parameter is set to null, fall back to a default value
+        // If either gradient parameter is set to null, fall back to a default value
         $gradientColor      = $gradientColor === null || !is_int($gradientColor) ? 0 : $gradientColor;
         $horizontalGradient = $horizontalGradient === null || !is_bool($horizontalGradient)
             ? false
@@ -269,16 +269,15 @@ if (!function_exists('imagettftextgradient')) {
                                 $image,
                                 $color
                             );
-                            $colorOpacity = $colorData['alpha'] * (1 - $gradientPosition);
 
                             $gradientColorData = imagecolorsforindex(
                                 $image,
                                 $gradientColor
                             );
-                            $gradientColorOpacity = $gradientColorData['alpha'] * $gradientPosition;
 
-                            $opacity = $colorOpacity + $gradientColorOpacity;
-                            $opacity = (127 - $opacity) / 127;
+                            $gradientAlpha =
+                                ($colorData['alpha'] * (1 - $gradientPosition))
+                                + ($gradientColorData['alpha'] * $gradientPosition);
 
                             // Set the current pixel in $image
                             imagesetpixel(
@@ -290,7 +289,7 @@ if (!function_exists('imagettftextgradient')) {
                                     $red,
                                     $green,
                                     $blue,
-                                    (int)round((1 - $visibility) * 127 * $opacity)
+                                    (int)round(127 - (127 - $gradientAlpha) * $visibility)
                                 )
                             );
                         }
