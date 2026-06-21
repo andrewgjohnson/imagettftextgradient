@@ -1,6 +1,6 @@
 ---
-layout:    layout
-title:     imagettftextgradient&#58; Examples&#58; Red to Blue in PHP 8+
+layout:    default
+title:     Red to Blue in PHP 8+ • Examples • imagettftextgradient
 permalink: /examples/red-to-blue-in-php-8/
 ---
 

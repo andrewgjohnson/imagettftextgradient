@@ -1,8 +1,9 @@
 ---
-layout:    layout
-title:     imagettftextgradient&#58; License
+layout:    default
+title:     License • imagettftextgradient
 permalink: /license/
-nav:       5
+nav_order: 5
+nav_text:  License
 ---
 
 # License

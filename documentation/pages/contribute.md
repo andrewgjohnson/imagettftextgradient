@@ -1,8 +1,9 @@
 ---
-layout:    layout
-title:     imagettftextgradient&#58; Contribute
+layout:    default
+title:     Contribute • imagettftextgradient
 permalink: /contribute/
-nav:       4
+nav_order: 4
+nav_text:  Contribute
 ---
 
 {% capture content %}{% include .github/CONTRIBUTING.md %}{% endcapture %}

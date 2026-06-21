@@ -1,6 +1,6 @@
 ---
-layout:    layout
-title:     imagettftextgradient&#58; Examples&#58; Red to Blue
+layout:    default
+title:     Red to Blue • Examples • imagettftextgradient
 permalink: /examples/red-to-blue/
 ---
 
