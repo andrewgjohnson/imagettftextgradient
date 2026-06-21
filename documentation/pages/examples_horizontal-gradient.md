@@ -1,6 +1,6 @@
 ---
-layout:    layout
-title:     imagettftextgradient&#58; Examples&#58; Horizontal Gradient
+layout:    default
+title:     Horizontal Gradient • Examples • imagettftextgradient
 permalink: /examples/horizontal-gradient/
 ---
 
