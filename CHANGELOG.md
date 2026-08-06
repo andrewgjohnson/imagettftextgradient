@@ -4,11 +4,21 @@ All notable changes to the [imagettftextgradient project](https://github.com/and
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [v2.0.0](https://github.com/andrewgjohnson/imagettftextgradient/releases/tag/v2.0.0) (August 5, 2026)
+
+imagettftextgradient is now part of [AgjGd](https://agjgd.org). The implementation has moved to the `\AndrewGJohnson\AgjGd` class and this package is now a thin reverse-compatibility wrapper around it.
+
+ * **Breaking:** raised the minimum PHP version from 5.0 to 8.0
+ * **Breaking:** added a dependency on [`andrewgjohnson/agjgd`](https://packagist.org/packages/andrewgjohnson/agjgd); the `imagettftextgradient()` implementation now lives in the `\AndrewGJohnson\AgjGd` class
+ * Changed the global `imagettftextgradient()` function into a deprecated reverse-compatibility wrapper that forwards to `\AndrewGJohnson\AgjGd::imagettftextgradient()`; please use the class in new code
+ * Kept the PHP 5/7 parameter shifting, where a gradient color could be passed in the ninth position in place of an `$options` array, so existing calls keep working; the wrapper resolves the shift before calling the class, which always takes `$options` in the ninth position
+ * Updated the examples and documentation to load the class through Composer’s autoloader
+
 ## [v1.1.3](https://github.com/andrewgjohnson/imagettftextgradient/releases/tag/v1.1.3) (May 13, 2026)
  * Changed the font in the examples from Arial to [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) which uses the [SIL OFL 1.1](https://openfontlicense.org/open-font-license-official-text/)
  * Fixed a bug where using transparent source colors (allocated via `imagecolorallocatealpha()`) would incorrectly render as fully opaque pixels
  * Updated documentation website to replace deprecated `hljs.initHighlighting()` call with `hljs.highlightAll()` and removed obsolete Google Analytics script
- * Fixed typos, grammatical errors, broken and incorrect links, and updated copyright years across documentation files
+ * Fixed typos, grammatical errors, broken and incorrect links and updated copyright years across documentation files
 
 ## [v1.1.2](https://github.com/andrewgjohnson/imagettftextgradient/releases/tag/v1.1.2) (May 9, 2026)
  * Added [.gitattributes](https://github.com/andrewgjohnson/imagettftextgradient/blob/master/.gitattributes) file to help manage end-of-line characters
